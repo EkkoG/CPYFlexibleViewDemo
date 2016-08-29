@@ -32,12 +32,13 @@
         v.backgroundColor = [UIColor blueColor];
         [container addSubview:v];
         [arr addObject:v];
-        [[[v cpy_toWidth:20] cpy_topToSuperview:0] cpy_bottomToSuperview:0];
+//        [[[v cpy_toWidth:20] cpy_topToSuperview:0] cpy_bottomToSuperview:0];
+        [[[v cpy_toWidth:20] cpy_leftToSuperview:0] cpy_rightToSuperview:0];
         [v cpy_constraintEqualTo:NSLayoutAttributeWidth toView:v toAttribute:NSLayoutAttributeHeight constant:0];
     }
     
-    [arr cpy_flexibleWidthWithMargin:0 spacing:10];
-//    [arr cpy_flexibleHeightWithMargin:0 spacing:5];
+//    [arr cpy_flexibleWidthWithMargin:0 spacing:10];
+    [arr cpy_flexibleHeightWithMargin:0 spacing:5];
 }
 
 - (void)didReceiveMemoryWarning {
