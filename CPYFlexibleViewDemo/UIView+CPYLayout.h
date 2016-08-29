@@ -9,10 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface UIView (CPYLayout)
-- (UIView *)cpy_topToSuperView:(CGFloat)constant;
-- (UIView *)cpy_leftToSuperView:(CGFloat)constant;
-- (UIView *)cpy_bottomToSuperView:(CGFloat)constant;
-- (UIView *)cpy_rightToSuperView:(CGFloat)constant;
+- (UIView *)cpy_topToSuperview:(CGFloat)constant;
+- (UIView *)cpy_leftToSuperview:(CGFloat)constant;
+- (UIView *)cpy_bottomToSuperview:(CGFloat)constant;
+- (UIView *)cpy_rightToSuperview:(CGFloat)constant;
 
 - (UIView *)cpy_topToView:(UIView *)toView constant:(CGFloat)constant;
 - (UIView *)cpy_leftToView:(UIView *)toView constant:(CGFloat)constant;
@@ -25,10 +25,10 @@
 - (UIView *)cpy_alignXToView:(UIView *)toView;
 - (UIView *)cpy_alignYToView:(UIView *)toView;
 
-- (UIView *)cpy_alignXToSuperView;
-- (UIView *)cpy_alignYToSuperView;
+- (UIView *)cpy_alignXToSuperview;
+- (UIView *)cpy_alignYToSuperview;
 
-- (UIView *)cpy_centerToSuperView;
+- (UIView *)cpy_centerToSuperview;
 
 - (UIView *)cpy_alignXToView:(UIView *)toView offset:(CGFloat)offset;
 - (UIView *)cpy_alignYToView:(UIView *)toView offset:(CGFloat)offset;

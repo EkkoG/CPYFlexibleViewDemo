@@ -11,21 +11,21 @@
 @implementation UIView (CPYLayout)
 
 // to superview
-- (UIView *)cpy_topToSuperView:(CGFloat)constant {
+- (UIView *)cpy_topToSuperview:(CGFloat)constant {
     [self cpy_constraintEqualTo:NSLayoutAttributeTop toView:self.superview toAttribute:NSLayoutAttributeTop constant:constant];
     return self;
 }
-- (UIView *)cpy_leftToSuperView:(CGFloat)constant {
+- (UIView *)cpy_leftToSuperview:(CGFloat)constant {
     [self cpy_constraintEqualTo:NSLayoutAttributeLeft toView:self.superview toAttribute:NSLayoutAttributeLeft constant:constant];
     return self;
 }
 
-- (UIView *)cpy_bottomToSuperView:(CGFloat)constant {
+- (UIView *)cpy_bottomToSuperview:(CGFloat)constant {
     [self cpy_constraintEqualTo:NSLayoutAttributeBottom toView:self.superview toAttribute:NSLayoutAttributeBottom constant:-constant];
     return self;
 }
 
-- (UIView *)cpy_rightToSuperView:(CGFloat)constant {
+- (UIView *)cpy_rightToSuperview:(CGFloat)constant {
     [self cpy_constraintEqualTo:NSLayoutAttributeRight toView:self.superview toAttribute:NSLayoutAttributeRight constant:-constant];
     return self;
 }
@@ -73,18 +73,18 @@
     return self;
 }
 
-- (UIView *)cpy_alignXToSuperView {
+- (UIView *)cpy_alignXToSuperview {
     [self cpy_alignXToView:self.superview offset:0];
     return self;
 }
 
-- (UIView *)cpy_alignYToSuperView {
+- (UIView *)cpy_alignYToSuperview {
     [self cpy_alignYToView:self.superview offset:0];
     return self;
 }
 
-- (UIView *)cpy_centerToSuperView {
-    [[self cpy_alignYToSuperView] cpy_alignXToSuperView];
+- (UIView *)cpy_centerToSuperview {
+    [[self cpy_alignYToSuperview] cpy_alignXToSuperview];
     return self;
 }
 
@@ -130,12 +130,13 @@
         UIView *tmp = self[i];
         
         if (i == 0) {
-            [tmp cpy_leftToSuperView:margin];
+            // 设置第一 View 到父 View 的左边距
+            [tmp cpy_leftToSuperview:margin];
         }
         
         if (tmp == self.lastObject) {
             // 最后一个，设置到父 View 右边距
-            [tmp cpy_rightToSuperView:margin];
+            [tmp cpy_rightToSuperview:margin];
         }
         else {
             // 不是最后一个，设置宽度相等和到下一个 View 的间距
@@ -143,8 +144,7 @@
             [[tmp cpy_constraintEqualTo:NSLayoutAttributeWidth toView:next toAttribute:NSLayoutAttributeWidth constant:0] cpy_rightToLeftToView:next constant:spacing];
         }
         // 设置居中
-        [tmp cpy_alignYToSuperView];
-        
+        [tmp cpy_alignYToSuperview];
     }
 }
 
@@ -152,21 +152,22 @@
     for (NSInteger i = 0; i < self.count; i++) {
         UIView *tmp = self[i];
         
+        // 第一个，设置到父 View 顶部边距
         if (i == 0) {
-            [tmp cpy_topToSuperView:margin];
+            [tmp cpy_topToSuperview:margin];
         }
         
         if (tmp == self.lastObject) {
-            // 最后一个，设置到父 View 右边距
-            [tmp cpy_bottomToSuperView:margin];
+            // 最后一个，设置到父 View 下边距
+            [tmp cpy_bottomToSuperview:margin];
         }
         else {
-            // 不是最后一个，设置宽度相等和到下一个 View 的间距
+            // 不是最后一个，设置高度相等和到下一个 View 的间距
             UIView *next = self[i + 1];
             [[tmp cpy_constraintEqualTo:NSLayoutAttributeHeight toView:next toAttribute:NSLayoutAttributeHeight constant:0] cpy_bottomToTopToView:next constant:spacing];
         }
         // 设置居中
-        [tmp cpy_alignXToSuperView];
+        [tmp cpy_alignXToSuperview];
         
     }
 }
