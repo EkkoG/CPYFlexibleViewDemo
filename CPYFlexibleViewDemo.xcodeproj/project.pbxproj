@@ -16,6 +16,7 @@
 		96F8DBB21D74710700E2156F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96F8DBB01D74710700E2156F /* LaunchScreen.storyboard */; };
 		96F8DBBD1D74710700E2156F /* CPYFlexibleViewDemoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 96F8DBBC1D74710700E2156F /* CPYFlexibleViewDemoTests.m */; };
 		96F8DBC81D74710800E2156F /* CPYFlexibleViewDemoUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 96F8DBC71D74710800E2156F /* CPYFlexibleViewDemoUITests.m */; };
+		96F8DBD71D74720800E2156F /* UIView+CPYLayout.m in Sources */ = {isa = PBXBuildFile; fileRef = 96F8DBD61D74720800E2156F /* UIView+CPYLayout.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,8 @@
 		96F8DBC31D74710800E2156F /* CPYFlexibleViewDemoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CPYFlexibleViewDemoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		96F8DBC71D74710800E2156F /* CPYFlexibleViewDemoUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CPYFlexibleViewDemoUITests.m; sourceTree = "<group>"; };
 		96F8DBC91D74710800E2156F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		96F8DBD51D74720800E2156F /* UIView+CPYLayout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+CPYLayout.h"; sourceTree = "<group>"; };
+		96F8DBD61D74720800E2156F /* UIView+CPYLayout.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+CPYLayout.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +110,8 @@
 				96F8DBA31D74710700E2156F /* AppDelegate.m */,
 				96F8DBA51D74710700E2156F /* ViewController.h */,
 				96F8DBA61D74710700E2156F /* ViewController.m */,
+				96F8DBD51D74720800E2156F /* UIView+CPYLayout.h */,
+				96F8DBD61D74720800E2156F /* UIView+CPYLayout.m */,
 				96F8DBA81D74710700E2156F /* Main.storyboard */,
 				96F8DBAE1D74710700E2156F /* Assets.xcassets */,
 				96F8DBB01D74710700E2156F /* LaunchScreen.storyboard */,
@@ -277,6 +282,7 @@
 				96F8DBA41D74710700E2156F /* AppDelegate.m in Sources */,
 				96F8DBAD1D74710700E2156F /* CPYFlexibleViewDemo.xcdatamodeld in Sources */,
 				96F8DBA11D74710700E2156F /* main.m in Sources */,
+				96F8DBD71D74720800E2156F /* UIView+CPYLayout.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
